@@ -1,0 +1,49 @@
+---
+title: "Tidy Tuesday 13 Feb 2024"
+author: "COMP/STAT 112"
+date: "2024-02-28"
+output: html_document
+---
+
+# Valentine's Day Consumer Data
+
+Happy Valentine's Day! This week we're exploring [Valentine's Day survey data](https://www.kaggle.com/datasets/infinator/happy-valentines-day-2022). The National Retail Federation in the United States conducts surveys and has created a [Valentine's Day Data Center](https://nrf.com/research-insights/holiday-data-and-trends/valentines-day/valentines-day-data-center) so you can explore the data on how consumers celebrate. 
+
+> The NRF has surveyed consumers about how they plan to celebrate Valentine’s Day annually for over a decade. Take a deeper dive into the data from the last 10 years, and use the interactive charts to explore a demographic breakdown of total spending, average spending, types of gifts planned and spending per type of gift. 
+
+The NRF has continued to collect data. The data for this week is from 2010 to 2022, as organized by Suraj Das for a Kaggle dataset. In the historical surveys gender was collected as only 'Men' and 'Women', which does not accurately include all genders. 
+
+If you're looking for other Valentine's Day type datasets, check out previous datasets on [chocolate](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-18) or [board games](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-25) (a good Valentine's Day activity!).
+
+## The Data
+
+```{r,message=FALSE,warning=FALSE}
+
+# load in packages
+
+library(tidyverse)
+
+historical_spending<-read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_13_2024/main/historical_spending")
+
+gifts_gender<-read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_13_2024/main/gifts_gender")
+
+gifts_age<-read_csv("https://raw.githubusercontent.com/djoloughlin/tidytuesday2_13_2024/main/gifts_age")
+```
+
+
+```{r}
+
+str(historical_spending)
+
+str(gifts_gender)
+
+str(gifts_age)
+
+```
+
+
+## How to Participate
+
+- [Explore the data](https://r4ds.hadley.nz/), watching out for interesting relationships. We would like to emphasize that you should not draw conclusions about **causation** in the data. There are various moderating variables that affect all data, many of which might not have been captured in these datasets. As such, our suggestion is to use the data provided to practice your data tidying and plotting techniques, and to consider for yourself what nuances might underlie these relationships.
+- Create a visualization, a model, a [shiny app](https://shiny.posit.co/), or some other piece of data-science-related output, using R or another programming language.
+- [Share your output and the code used to generate it](../../../sharing.md) on social media with the #TidyTuesday hashtag.
